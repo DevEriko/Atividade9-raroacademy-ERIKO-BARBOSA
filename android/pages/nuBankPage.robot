@@ -14,6 +14,15 @@ ${BOTAO_COBRAR_PIX}             xpath=//android.widget.ImageView[contains(@conte
 ${CAMPO_MINHAS_CHAVES}          xpath=//android.view.View[@content-desc="Minhas chaves"]
 ${CAMPO_MEU_LIMITE_PIX}         xpath=//android.view.View[@content-desc="Meu limite Pix"]
 ${CAMPO_ME_AJUDA}               xpath=//android.view.View[@content-desc="Me ajuda"]
+${MEUS_CARTÕES}                 xpath=//android.view.View[@content-desc="Meus cartões"]
+${LABEL_10MIL}                  xpath=//android.view.View[@content-desc="Você tem R$ 10.000,00 disponíveis para empréstimo."]
+${LABEL_CONQUISTE_PLANOS}       xpath=//android.view.View[@content-desc="Conquiste planos futuros: conheça as opções para guardar dinheiro."]
+${CARTAO_DE_CREDITO}            xpath=//android.view.View[@content-desc,"Cartão de Crédito"]
+${CAMPO_EMPRÉSTIMOS}            xpath=//android.view.View[@content-desc="Empréstimos"]
+${CAMPO_RECARGA}                xpath=//android.view.View[contains(@content-desc,"Recarga")]
+${CAMPO_COBRAR}                 xpath=//android.view.View[@content-desc="Cobrar"]
+${CAMPO_DOAÇÃO}                 xpath=//android.view.View[@content-desc="Doação"]
+${CAMPO_ATALHOS}                xpath=//android.view.View[contains(@content-desc,"Encontrar atalhos")]
 
 ${CAMPO_PAGAR}                  xpath=//android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[2]
 ${BOTAO_PG_COM_PIX}             xpath=//android.view.View[@content-desc,"Pagar com Pix"]
@@ -42,6 +51,13 @@ ${TRANF_PATRICIA}               xpath=//android.view.View[@content-desc,"Transfe
 ${TRANF_JEY}                    xpath=//android.view.View[@content-desc,"Transferência recebida Ontem ANDRE JEY R$ 30,00 Pix"]
 ${TRANF_ERIKO}                  xpath=//android.view.View[@content-desc,"Transferência recebida ERIKO BARBOSA R$ 30,00 Pix"]
 ${TRANF_IVAN}                   xpath=//android.view.View[@content-desc,"Transferência recebida Ontem IVAN COELHO R$ 30,00 Pix"]
+
+${CAMPO_EMPRESTIMO_10MIL}       xpath=//android.view.View[@content-desc,"Empréstimo"]
+${INVESTIMENTOS}                xpath=//android.view.View[@content-desc,"Investimentos"]
+${SEGURO_DE_VIDA}               xpath=//android.view.View[@content-desc,"Seguro de vida"]
+${DESCUBRA_MAIS}                xpath=//android.view.View[@content-desc,"Descubra mais"]
+${WHATZAP_NOVO}                 xpath=//android.view.View[@content-desc,"WhatsApp"]
+${INDIQUE_AMIGO}                xpath=//android.view.View[@content-desc,"Indique seus amigos"]
 
 
 *** Keywords ***
@@ -101,3 +117,34 @@ Então o usuário será direcionado para área de depósito de sua conta
     Element Should Be Visible    ${DEP_BOLETO}
     Element Should Be Visible    ${DEP_TED/DOC}
     Element Should Be Visible    ${DEP_TRAZER_SEU_SALARIO}
+
+Dado que estou logado no aplicativo Nubank
+    Click Element    ${CLICAR_PARA_INICIAR}
+
+Quando acessar a tela principal do aplicativo
+    Element Should Be Visible    ${TELA_INICIAL}
+
+Então o usuário terá acesso a todas as informações da tela principal do sistema
+    Element Should Be Visible    ${TELA_INICIAL}
+    Element Should Be Visible    ${CAMPO_PIX}
+    Element Should Be Visible    ${CAMPO_PAGAR}
+    Element Should Be Visible    ${CAMPO_TRANSFERIR}
+    Element Should Be Visible    ${CAMPO_DEPOSITAR}
+    Swipe By Percent    85    50    15    50
+    Element Should Be Visible    ${CAMPO_EMPRÉSTIMOS}
+    Element Should Be Visible    ${CAMPO_RECARGA}
+    Element Should Be Visible    ${CAMPO_COBRAR}
+    Element Should Be Visible    ${CAMPO_DOAÇÃO}
+    Swipe By Percent    80    50    20    50
+    Element Should Be Visible    ${CAMPO_ATALHOS}
+    Element Should Be Visible    ${MEUS_CARTÕES}
+    Element Should Be Visible    ${LABEL_10MIL}
+    Element Should Be Visible    ${LABEL_CONQUISTE_PLANOS}
+    Element Should Be Visible    ${CARTAO_DE_CREDITO}
+    Swipe By Percent    50    90    50    10
+    Element Should Be Visible    ${CAMPO_EMPRESTIMO_10MIL}
+    Element Should Be Visible    ${INVESTIMENTOS}
+    Element Should Be Visible    ${SEGURO_DE_VIDA}
+    Element Should Be Visible    ${DESCUBRA_MAIS}
+    Element Should Be Visible    ${WHATZAP_NOVO}
+    Element Should Be Visible    ${INDIQUE_AMIGO}
