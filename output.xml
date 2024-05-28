@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.7.8 on win32)" generated="20240528 16:13:30.501" rpa="false" schemaversion="4">
-<suite id="s1" name="telaprincipalNubank" source="c:\Users\Andressa\Desktop\ProjetoNuBank\android\features\telaprincipalNubank.robot">
-<test id="s1-t1" name="Validar a tela principal do app Nubank e seus botões" line="9">
+<robot generator="Robot 6.1.1 (Python 3.7.8 on win32)" generated="20240528 17:19:31.529" rpa="false" schemaversion="4">
+<suite id="s1" name="emprestimosNubank" source="c:\Users\Andressa\Desktop\ProjetoNuBank\android\features\emprestimosNubank.robot">
+<test id="s1-t1" name="Validar o campo Emprestimos e seus botões" line="9">
 <kw name="Abrir App" library="config" type="SETUP">
 <kw name="Open Application" library="AppiumLibrary">
 <arg>http://127.0.0.1:4723</arg>
@@ -17,203 +17,87 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |
 | strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<status status="PASS" starttime="20240528 16:13:31.131" endtime="20240528 16:13:44.185"/>
+<status status="PASS" starttime="20240528 17:19:31.857" endtime="20240528 17:19:42.002"/>
 </kw>
-<status status="PASS" starttime="20240528 16:13:31.129" endtime="20240528 16:13:44.185"/>
+<status status="PASS" starttime="20240528 17:19:31.855" endtime="20240528 17:19:42.002"/>
 </kw>
-<kw name="Dado que estou logado no aplicativo Nubank" library="nuBankPage">
+<kw name="Dado que acessei a tela principal do sistema do Nubank" library="nuBankPage">
 <kw name="Click Element" library="AppiumLibrary">
 <arg>${CLICAR_PARA_INICIAR}</arg>
 <doc>Click element identified by `locator`.</doc>
-<msg timestamp="20240528 16:13:44.200" level="INFO">Clicking element 'xpath=//android.widget.Button[@resource-id="android:id/button1"]'.</msg>
-<msg timestamp="20240528 16:13:47.921" level="INFO">xpath criteria: //android.widget.Button[@resource-id="android:id/button1"]</msg>
-<status status="PASS" starttime="20240528 16:13:44.187" endtime="20240528 16:13:47.921"/>
+<msg timestamp="20240528 17:19:42.011" level="INFO">Clicking element 'xpath=//android.widget.Button[@resource-id="android:id/button1"]'.</msg>
+<msg timestamp="20240528 17:19:45.823" level="INFO">xpath criteria: //android.widget.Button[@resource-id="android:id/button1"]</msg>
+<status status="PASS" starttime="20240528 17:19:42.005" endtime="20240528 17:19:45.823"/>
 </kw>
-<status status="PASS" starttime="20240528 16:13:44.186" endtime="20240528 16:13:47.922"/>
+<status status="PASS" starttime="20240528 17:19:42.004" endtime="20240528 17:19:45.823"/>
 </kw>
-<kw name="Quando acessar a tela principal do aplicativo" library="nuBankPage">
-<kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>${TELA_INICIAL}</arg>
-<doc>Verifies that element identified with locator is visible.</doc>
-<msg timestamp="20240528 16:13:48.287" level="INFO">xpath criteria: //android.view.View[@content-desc="Olá, Breno Freitas"]</msg>
-<status status="PASS" starttime="20240528 16:13:47.929" endtime="20240528 16:13:48.288"/>
-</kw>
-<status status="PASS" starttime="20240528 16:13:47.928" endtime="20240528 16:13:48.288"/>
-</kw>
-<kw name="Então o usuário terá acesso a todas as informações da tela principal do sistema" library="nuBankPage">
-<kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>${TELA_INICIAL}</arg>
-<doc>Verifies that element identified with locator is visible.</doc>
-<msg timestamp="20240528 16:13:48.631" level="INFO">xpath criteria: //android.view.View[@content-desc="Olá, Breno Freitas"]</msg>
-<status status="PASS" starttime="20240528 16:13:48.293" endtime="20240528 16:13:48.631"/>
-</kw>
-<kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>${CAMPO_PIX}</arg>
-<doc>Verifies that element identified with locator is visible.</doc>
-<msg timestamp="20240528 16:13:48.918" level="INFO">xpath criteria: //android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[1]</msg>
-<status status="PASS" starttime="20240528 16:13:48.632" endtime="20240528 16:13:48.918"/>
-</kw>
-<kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>${CAMPO_PAGAR}</arg>
-<doc>Verifies that element identified with locator is visible.</doc>
-<msg timestamp="20240528 16:13:49.221" level="INFO">xpath criteria: //android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[2]</msg>
-<status status="PASS" starttime="20240528 16:13:48.919" endtime="20240528 16:13:49.222"/>
-</kw>
-<kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>${CAMPO_TRANSFERIR}</arg>
-<doc>Verifies that element identified with locator is visible.</doc>
-<msg timestamp="20240528 16:13:49.519" level="INFO">xpath criteria: //android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[3]</msg>
-<status status="PASS" starttime="20240528 16:13:49.223" endtime="20240528 16:13:49.520"/>
-</kw>
-<kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>${CAMPO_DEPOSITAR}</arg>
-<doc>Verifies that element identified with locator is visible.</doc>
-<msg timestamp="20240528 16:13:49.819" level="INFO">xpath criteria: //android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[4]</msg>
-<status status="PASS" starttime="20240528 16:13:49.520" endtime="20240528 16:13:49.819"/>
-</kw>
+<kw name="Quando acessar a função Emprestimos" library="nuBankPage">
 <kw name="Swipe By Percent" library="AppiumLibrary">
 <arg>85</arg>
-<arg>50</arg>
-<arg>15</arg>
-<arg>50</arg>
-<doc>Swipe from one percent of the screen to another percent, for an optional duration.
-Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
-<status status="PASS" starttime="20240528 16:13:49.820" endtime="20240528 16:13:51.245"/>
-</kw>
-<kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>${CAMPO_EMPRÉSTIMOS}</arg>
-<doc>Verifies that element identified with locator is visible.</doc>
-<msg timestamp="20240528 16:13:53.852" level="INFO">xpath criteria: //android.view.View[@content-desc="Empréstimos"]</msg>
-<status status="PASS" starttime="20240528 16:13:51.249" endtime="20240528 16:13:53.852"/>
-</kw>
-<kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>${CAMPO_RECARGA}</arg>
-<doc>Verifies that element identified with locator is visible.</doc>
-<msg timestamp="20240528 16:13:54.190" level="INFO">xpath criteria: //android.view.View[contains(@content-desc,"Recarga")]</msg>
-<status status="PASS" starttime="20240528 16:13:53.853" endtime="20240528 16:13:54.191"/>
-</kw>
-<kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>${CAMPO_COBRAR}</arg>
-<doc>Verifies that element identified with locator is visible.</doc>
-<msg timestamp="20240528 16:13:54.494" level="INFO">xpath criteria: //android.view.View[@content-desc="Cobrar"]</msg>
-<status status="PASS" starttime="20240528 16:13:54.193" endtime="20240528 16:13:54.495"/>
-</kw>
-<kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>${CAMPO_DOAÇÃO}</arg>
-<doc>Verifies that element identified with locator is visible.</doc>
-<msg timestamp="20240528 16:13:54.807" level="INFO">xpath criteria: //android.view.View[@content-desc="Doação"]</msg>
-<status status="PASS" starttime="20240528 16:13:54.495" endtime="20240528 16:13:54.807"/>
-</kw>
-<kw name="Swipe By Percent" library="AppiumLibrary">
-<arg>80</arg>
 <arg>50</arg>
 <arg>20</arg>
 <arg>50</arg>
 <doc>Swipe from one percent of the screen to another percent, for an optional duration.
 Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
-<status status="PASS" starttime="20240528 16:13:54.809" endtime="20240528 16:13:56.242"/>
+<status status="PASS" starttime="20240528 17:19:45.825" endtime="20240528 17:19:47.247"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${CAMPO_EMPRESTIMOS}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20240528 17:19:47.252" level="INFO">Clicking element 'xpath=//android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[1]'.</msg>
+<msg timestamp="20240528 17:19:50.838" level="INFO">xpath criteria: //android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[1]</msg>
+<status status="PASS" starttime="20240528 17:19:47.247" endtime="20240528 17:19:50.838"/>
+</kw>
+<status status="PASS" starttime="20240528 17:19:45.824" endtime="20240528 17:19:50.838"/>
+</kw>
+<kw name="Então o usuário será direcionado para área de Emprestimos" library="nuBankPage">
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<arg>${VALOR_10MIL}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<msg timestamp="20240528 17:19:51.114" level="INFO">xpath criteria: //android.view.View[@content-desc="O valor disponível no momento é de R$ 10.000,00"]</msg>
+<status status="PASS" starttime="20240528 17:19:50.841" endtime="20240528 17:19:51.115"/>
 </kw>
 <kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>${CAMPO_ATALHOS}</arg>
+<arg>${MENSAGEM_ANALISECREDITO}</arg>
 <doc>Verifies that element identified with locator is visible.</doc>
-<msg timestamp="20240528 16:13:57.695" level="INFO">xpath criteria: //android.view.View[contains(@content-desc,"Encontrar atalhos")]</msg>
-<status status="PASS" starttime="20240528 16:13:56.242" endtime="20240528 16:13:57.696"/>
+<msg timestamp="20240528 17:19:51.358" level="INFO">xpath criteria: //android.view.View[@content-desc="Este valor pode mudar diariamente devido à nossa análise de crédito."]</msg>
+<status status="PASS" starttime="20240528 17:19:51.115" endtime="20240528 17:19:51.358"/>
 </kw>
 <kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>${MEUS_CARTÕES}</arg>
+<arg>${BOTAO_COMO_FUNCIONA}</arg>
 <doc>Verifies that element identified with locator is visible.</doc>
-<msg timestamp="20240528 16:13:57.993" level="INFO">xpath criteria: //android.view.View[@content-desc="Meus cartões"]</msg>
-<status status="PASS" starttime="20240528 16:13:57.696" endtime="20240528 16:13:57.994"/>
+<msg timestamp="20240528 17:19:51.606" level="INFO">xpath criteria: //android.view.View[@content-desc="Entenda como funciona &gt;"]</msg>
+<status status="PASS" starttime="20240528 17:19:51.359" endtime="20240528 17:19:51.607"/>
 </kw>
 <kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>${LABEL_10MIL}</arg>
+<arg>${BOTAO_NOVO_EMPRESTIMO}</arg>
 <doc>Verifies that element identified with locator is visible.</doc>
-<msg timestamp="20240528 16:13:58.295" level="INFO">xpath criteria: //android.view.View[@content-desc="Você tem R$ 10.000,00 disponíveis para empréstimo."]</msg>
-<status status="PASS" starttime="20240528 16:13:57.995" endtime="20240528 16:13:58.296"/>
+<msg timestamp="20240528 17:19:51.850" level="INFO">xpath criteria: //android.widget.Button[@content-desc="NOVO EMPRÉSTIMO"]</msg>
+<status status="PASS" starttime="20240528 17:19:51.607" endtime="20240528 17:19:51.851"/>
 </kw>
 <kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>${LABEL_CONQUISTE_PLANOS}</arg>
+<arg>${BOTAO_NOVO_EMPRESTIMO}</arg>
 <doc>Verifies that element identified with locator is visible.</doc>
-<msg timestamp="20240528 16:13:58.638" level="INFO">xpath criteria: //android.view.View[@content-desc="Conquiste planos futuros: conheça as opções para guardar dinheiro."]</msg>
-<status status="PASS" starttime="20240528 16:13:58.296" endtime="20240528 16:13:58.638"/>
+<msg timestamp="20240528 17:19:52.086" level="INFO">xpath criteria: //android.widget.Button[@content-desc="NOVO EMPRÉSTIMO"]</msg>
+<status status="PASS" starttime="20240528 17:19:51.851" endtime="20240528 17:19:52.087"/>
 </kw>
-<kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>${CARTAO_DE_CREDITO}</arg>
-<doc>Verifies that element identified with locator is visible.</doc>
-<msg timestamp="20240528 16:13:59.535" level="INFO">xpath criteria: //android.view.View[@content-desc,"Cartão de Crédito"]</msg>
-<status status="PASS" starttime="20240528 16:13:58.638" endtime="20240528 16:13:59.536"/>
-</kw>
-<kw name="Swipe By Percent" library="AppiumLibrary">
-<arg>50</arg>
-<arg>90</arg>
-<arg>50</arg>
-<arg>10</arg>
-<doc>Swipe from one percent of the screen to another percent, for an optional duration.
-Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
-<status status="PASS" starttime="20240528 16:13:59.536" endtime="20240528 16:14:01.585"/>
-</kw>
-<kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>${CAMPO_EMPRESTIMO_10MIL}</arg>
-<doc>Verifies that element identified with locator is visible.</doc>
-<msg timestamp="20240528 16:14:03.453" level="INFO">xpath criteria: //android.view.View[@content-desc,"Empréstimo"]</msg>
-<status status="PASS" starttime="20240528 16:14:01.586" endtime="20240528 16:14:03.454"/>
-</kw>
-<kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>${INVESTIMENTOS}</arg>
-<doc>Verifies that element identified with locator is visible.</doc>
-<msg timestamp="20240528 16:14:03.762" level="INFO">xpath criteria: //android.view.View[@content-desc,"Investimentos"]</msg>
-<status status="PASS" starttime="20240528 16:14:03.454" endtime="20240528 16:14:03.763"/>
-</kw>
-<kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>${SEGURO_DE_VIDA}</arg>
-<doc>Verifies that element identified with locator is visible.</doc>
-<msg timestamp="20240528 16:14:04.097" level="INFO">xpath criteria: //android.view.View[@content-desc,"Seguro de vida"]</msg>
-<status status="PASS" starttime="20240528 16:14:03.764" endtime="20240528 16:14:04.098"/>
-</kw>
-<kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>${DESCUBRA_MAIS}</arg>
-<doc>Verifies that element identified with locator is visible.</doc>
-<msg timestamp="20240528 16:14:04.398" level="INFO">xpath criteria: //android.view.View[@content-desc,"Descubra mais"]</msg>
-<status status="PASS" starttime="20240528 16:14:04.099" endtime="20240528 16:14:04.398"/>
-</kw>
-<kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>${WHATZAP_NOVO}</arg>
-<doc>Verifies that element identified with locator is visible.</doc>
-<msg timestamp="20240528 16:14:04.694" level="INFO">xpath criteria: //android.view.View[@content-desc,"WhatsApp"]</msg>
-<status status="PASS" starttime="20240528 16:14:04.399" endtime="20240528 16:14:04.695"/>
-</kw>
-<kw name="Element Should Be Visible" library="AppiumLibrary">
-<arg>${INDIQUE_AMIGO}</arg>
-<doc>Verifies that element identified with locator is visible.</doc>
-<msg timestamp="20240528 16:14:04.999" level="INFO">xpath criteria: //android.view.View[@content-desc,"Indique seus amigos"]</msg>
-<status status="PASS" starttime="20240528 16:14:04.695" endtime="20240528 16:14:05.000"/>
-</kw>
-<kw name="Swipe By Percent" library="AppiumLibrary">
-<arg>85</arg>
-<arg>50</arg>
-<arg>15</arg>
-<arg>50</arg>
-<doc>Swipe from one percent of the screen to another percent, for an optional duration.
-Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
-<status status="PASS" starttime="20240528 16:14:05.001" endtime="20240528 16:14:06.444"/>
-</kw>
-<status status="PASS" starttime="20240528 16:13:48.291" endtime="20240528 16:14:06.444"/>
+<status status="PASS" starttime="20240528 17:19:50.840" endtime="20240528 17:19:52.087"/>
 </kw>
 <kw name="Teardown" library="config" type="TEARDOWN">
 <kw name="Run Keyword If Test Failed" library="BuiltIn">
 <arg>Capture Page Screenshot</arg>
 <doc>Runs the given keyword with the given arguments, if the test failed.</doc>
-<status status="PASS" starttime="20240528 16:14:06.447" endtime="20240528 16:14:06.449"/>
+<status status="PASS" starttime="20240528 17:19:52.090" endtime="20240528 17:19:52.091"/>
 </kw>
 <kw name="Close All Applications" library="AppiumLibrary">
 <doc>Closes all open applications.</doc>
-<status status="PASS" starttime="20240528 16:14:06.450" endtime="20240528 16:14:07.642"/>
+<status status="PASS" starttime="20240528 17:19:52.091" endtime="20240528 17:19:52.911"/>
 </kw>
-<status status="PASS" starttime="20240528 16:14:06.445" endtime="20240528 16:14:07.642"/>
+<status status="PASS" starttime="20240528 17:19:52.089" endtime="20240528 17:19:52.912"/>
 </kw>
-<status status="PASS" starttime="20240528 16:13:31.128" endtime="20240528 16:14:07.650"/>
+<status status="PASS" starttime="20240528 17:19:31.854" endtime="20240528 17:19:52.913"/>
 </test>
-<status status="PASS" starttime="20240528 16:13:30.522" endtime="20240528 16:14:07.665"/>
+<status status="PASS" starttime="20240528 17:19:31.535" endtime="20240528 17:19:52.921"/>
 </suite>
 <statistics>
 <total>
@@ -222,7 +106,7 @@ Normal swipe fails to scale for different screen resolutions, this can be avoide
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="telaprincipalNubank">telaprincipalNubank</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="emprestimosNubank">emprestimosNubank</stat>
 </suite>
 </statistics>
 <errors>

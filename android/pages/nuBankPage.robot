@@ -59,6 +59,13 @@ ${DESCUBRA_MAIS}                xpath=//android.view.View[@content-desc,"Descubr
 ${WHATZAP_NOVO}                 xpath=//android.view.View[@content-desc,"WhatsApp"]
 ${INDIQUE_AMIGO}                xpath=//android.view.View[@content-desc,"Indique seus amigos"]
 
+${CAMPO_EMPRESTIMOS}            xpath=//android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[1]
+${VALOR_10MIL}                  xpath=//android.view.View[@content-desc="O valor disponível no momento é de R$ 10.000,00"]
+${MENSAGEM_ANALISECREDITO}      xpath=//android.view.View[@content-desc="Este valor pode mudar diariamente devido à nossa análise de crédito."]
+${BOTAO_COMO_FUNCIONA}          xpath=//android.view.View[@content-desc="Entenda como funciona >"]
+${BOTAO_NOVO_EMPRESTIMO}        xpath=//android.widget.Button[@content-desc="NOVO EMPRÉSTIMO"]
+${NAO_PODE_UTILIZAR}            xpath=//android.view.View[@content-desc="Você não possui nenhum empréstimo ativo."]
+
 
 *** Keywords ***
 Dado que acessei a tela principal do sistema do Nubank
@@ -148,3 +155,14 @@ Então o usuário terá acesso a todas as informações da tela principal do sis
     Element Should Be Visible    ${DESCUBRA_MAIS}
     Element Should Be Visible    ${WHATZAP_NOVO}
     Element Should Be Visible    ${INDIQUE_AMIGO}
+
+Quando acessar a função Emprestimos
+    Swipe By Percent    85    50    20    50
+    Click Element    ${CAMPO_EMPRESTIMOS}
+
+Então o usuário será direcionado para área de Emprestimos
+    Element Should Be Visible    ${VALOR_10MIL}
+    Element Should Be Visible    ${MENSAGEM_ANALISECREDITO}
+    Element Should Be Visible    ${BOTAO_COMO_FUNCIONA}
+    Element Should Be Visible    ${BOTAO_NOVO_EMPRESTIMO}
+    Element Should Be Visible    ${BOTAO_NOVO_EMPRESTIMO}

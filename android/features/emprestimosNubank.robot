@@ -3,3 +3,10 @@ Resource            ../base.robot
 
 Test Setup          Abrir App
 Test Teardown       Teardown
+
+
+*** Test Cases ***
+Validar o campo Emprestimos e seus botões
+    Dado que acessei a tela principal do sistema do Nubank
+    Quando acessar a função Emprestimos
+    Então o usuário será direcionado para área de Emprestimos
