@@ -66,6 +66,9 @@ ${BOTAO_COMO_FUNCIONA}          xpath=//android.view.View[@content-desc="Entenda
 ${BOTAO_NOVO_EMPRESTIMO}        xpath=//android.widget.Button[@content-desc="NOVO EMPRÉSTIMO"]
 ${NAO_PODE_UTILIZAR}            xpath=//android.view.View[@content-desc="Você não possui nenhum empréstimo ativo."]
 
+${CAMPO_RECARGA}                xpath=//android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[2]
+${TELA_DE_RECARGA}              xpath=//android.widget.EditText
+
 
 *** Keywords ***
 Dado que acessei a tela principal do sistema do Nubank
@@ -166,3 +169,11 @@ Então o usuário será direcionado para área de Emprestimos
     Element Should Be Visible    ${BOTAO_COMO_FUNCIONA}
     Element Should Be Visible    ${BOTAO_NOVO_EMPRESTIMO}
     Element Should Be Visible    ${BOTAO_NOVO_EMPRESTIMO}
+
+Quando acessar a função Recarga de celular
+    Swipe By Percent    85    50    20    50
+    Click Element    ${CAMPO_RECARGA}
+
+Então o usuário será direcionado para área de recarga de celular
+    Wait Until Element Is Visible    ${TELA_DE_RECARGA}
+    Input Text    ${TELA_DE_RECARGA}    246810
