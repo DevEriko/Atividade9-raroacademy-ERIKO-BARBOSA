@@ -237,7 +237,7 @@ Quando acessar o campo Empréstimos
     Click Element    ${TELA_EMPRESTIMO}
 
 Quando acessar a função Investimentos
-    Swipe By Percent    50    60    50    10
+    Swipe By Percent    50    70    50    10
     Click Element    ${CAMPO_INVESTIMENTOS}
 
 Então o usuário será direcionado para a tela de investimentos
