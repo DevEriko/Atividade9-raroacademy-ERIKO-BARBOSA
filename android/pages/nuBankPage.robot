@@ -184,7 +184,7 @@ Então o usuário terá acesso a todas as informações da tela principal do sis
 
 Quando acessar a função Emprestimos
     Swipe By Percent    85    50    20    50
-    Click Element    ${CAMPO_EMPRESTIMOS}
+    Click Element    ${CAMPO_EMPRÉSTIMOS}
 
 Então o usuário será direcionado para área de Emprestimos
     Element Should Be Visible    ${VALOR_10MIL}
