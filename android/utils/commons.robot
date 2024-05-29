@@ -10,6 +10,12 @@ Comparar Contente desc
     Should Contain    ${contenteDesc}    ${elemento2}
 
 Esperar no elemento para clicar
-    [Arguments]    ${elemento}
-    Wait Until Element Is Visible    ${elemento}
+    [Arguments]    ${elemento}    ${elemento2}
+    Wait Until Element Is Visible    ${elemento2}
     Click Element    ${elemento}
+
+Comparar Hint
+    [Arguments]    ${elemento}    ${elemento2}
+    Element Should Be Visible    ${elemento}
+    ${Hint}=    AppiumLibrary.Get Element Attribute    ${elemento}    hint
+    Should Contain    ${Hint}    ${elemento2}
