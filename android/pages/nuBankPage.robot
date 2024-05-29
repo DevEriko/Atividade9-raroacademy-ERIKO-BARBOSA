@@ -18,7 +18,7 @@ ${MEUS_CARTÕES}                 xpath=//android.view.View[@content-desc="Meus c
 ${LABEL_10MIL}                  xpath=//android.view.View[@content-desc="Você tem R$ 10.000,00 disponíveis para empréstimo."]
 ${LABEL_CONQUISTE_PLANOS}       xpath=//android.view.View[@content-desc="Conquiste planos futuros: conheça as opções para guardar dinheiro."]
 ${CARTAO_DE_CREDITO}            xpath=//android.view.View[contains(@content-desc,"Cartão de Crédito")]
-${CAMPO_EMPRÉSTIMOS}            xpath=//android.view.View[contains(@content-desc,"Empréstimo")]
+${CAMPO_EMPRÉSTIMOS}            xpath=//android.view.View[contains(@content-desc,"Empréstimos")]
 ${CAMPO_RECARGA}                xpath=//android.view.View[contains(@content-desc,"Recarga")]
 ${CAMPO_COBRAR}                 xpath=//android.view.View[@content-desc="Cobrar"]
 ${CAMPO_DOAÇÃO}                 xpath=//android.view.View[@content-desc="Doação"]
@@ -38,10 +38,10 @@ ${DEP_BOLETO}                   xpath=//android.view.View[contains(@content-desc
 ${DEP_TED/DOC}                  xpath=//android.view.View[contains(@content-desc,"TED/DOC")]
 ${DEP_TRAZER_SEU_SALARIO}       xpath=//android.view.View[contains(@content-desc,"Trazer seu salário")]
 
-${CONTA_BRENO}                  xpath=//android.view.View[contains(@content-desc,'Conta')]
+${CONTA_BRENO}                  xpath=//android.view.View[contains(@content-desc,"Conta")]
 ${SALDO_DISPONIVEL}             xpath=//android.view.View[contains(@content-desc,"Saldo disponível")]
-${DIM_GUARDADO}                 xpath=//android.view.View[contains(@content-desc,"Dinheiro guardado R$ 240,02")]
-${REMDIMENTO_CONTA}             xpath=//android.view.View[contains(@content-desc,"Rendimento total da conta +R$ 0,20 este mês")]
+${DIM_GUARDADO}                 xpath=//android.view.View[contains(@content-desc,"Dinheiro guardado")]
+${REMDIMENTO_CONTA}             xpath=//android.view.View[contains(@content-desc,"Rendimento total da conta")]
 ${BTN_DEPOSITAR}                xpath=//android.widget.HorizontalScrollView/android.widget.Button[1]
 ${BTN_PAGAR}                    xpath=//android.widget.HorizontalScrollView/android.widget.Button[2]
 ${BTN_TRANSFERIR}               xpath=//android.widget.HorizontalScrollView/android.widget.Button[3]
@@ -60,10 +60,10 @@ ${WHATZAP_NOVO}                 xpath=//android.view.View[contains(@content-desc
 ${INDIQUE_AMIGO}                xpath=//android.view.View[@content-desc,"Indique seus amigos"]
 
 ${VALOR_10MIL}                  xpath=//android.view.View[@content-desc="O valor disponível no momento é de R$ 10.000,00"]
-${MENSAGEM_ANALISECREDITO}      xpath=//android.view.View[@content-desc="Este valor pode mudar diariamente devido à nossa análise de crédito."]
-${BOTAO_COMO_FUNCIONA}          xpath=//android.view.View[@content-desc="Entenda como funciona >"]
-${BOTAO_NOVO_EMPRESTIMO}        xpath=//android.widget.Button[@content-desc="NOVO EMPRÉSTIMO"]
-${NAO_PODE_UTILIZAR}            xpath=//android.view.View[@content-desc="Você não possui nenhum empréstimo ativo."]
+${MENSAGEM_ANALISECREDITO}      xpath=//android.view.View[contains(@content-desc,"Este valor pode mudar diariamente devido à nossa análise de crédito.")]
+${BOTAO_COMO_FUNCIONA}          xpath=//android.view.View[contains(@content-desc,"Entenda como funciona >")]
+${BOTAO_NOVO_EMPRESTIMO}        xpath=//android.widget.Button[contains(@content-desc,"NOVO EMPRÉSTIMO")]
+${NAO_PODE_UTILIZAR}            xpath=//android.view.View[contains(@content-desc,"Você não possui nenhum empréstimo ativo.")]
 
 ${TELA_DE_RECARGA}              xpath=//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[1]/android.view.View
 ${BOTÃO_RECARGA}                xpath=//android.view.View[contains(@content-desc,"Recarga")]
@@ -92,6 +92,8 @@ ${TEXTO_2}                      xpath=//android.view.View[@content-desc="Além d
 ${SETA_SAIR}                    xpath=//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.widget.Button
 
 ${MENSAGEM_RESGATE_AMIGOS}      xpath=//android.widget.ImageView[contains(@content-desc,"Resgate seus amigos da fila do banco")]
+${CARROSSEL_1}                  xpath=//android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[1]
+${TELA_EMPRESTIMO}              xpath=//android.view.View[contains(@content-desc,"Empréstimo")]
 
 
 *** Keywords ***
@@ -99,7 +101,7 @@ Dado que acessei a tela principal do sistema do Nubank
     Click Element    ${CLICAR_PARA_INICIAR}
 
 Quando acessar o valor que está na conta do cliente
-    Esperar no elemento para clicar    ${CONTA_BRENO}    ${SALDO_DISPONIVEL}
+    Esperar no elemento para clicar    ${CONTA_BRENO}    ${CONTA_BRENO}
 
 Então o usuário será direcionado para o histórico da conta e seus botões
     Element Should Be Visible    ${SALDO_DISPONIVEL}
@@ -184,7 +186,7 @@ Então o usuário terá acesso a todas as informações da tela principal do sis
 
 Quando acessar a função Emprestimos
     Swipe By Percent    85    50    20    50
-    Click Element    ${CAMPO_EMPRÉSTIMOS}
+    Click Element    ${CARROSSEL_1}
 
 Então o usuário será direcionado para área de Emprestimos
     Element Should Be Visible    ${VALOR_10MIL}
@@ -232,7 +234,7 @@ Então o usuário tera acesso a todas as funcionalidades do Cartão de Crédito
 
 Quando acessar o campo Empréstimos
     Swipe By Percent    50    70    50    10
-    Click Element    ${CAMPO_EMPRÉSTIMOS}
+    Click Element    ${TELA_EMPRESTIMO}
 
 Quando acessar a função Investimentos
     Swipe By Percent    50    60    50    10
